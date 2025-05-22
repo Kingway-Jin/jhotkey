@@ -25,12 +25,12 @@ public class HotKey {
         return hotKeyListener != null;
     }
 
-    public boolean equals(Object other) {
-        if (other instanceof HotKey) {
+    public boolean hasSameTrigger(HotKey other) {
+        if (other != null) {
             if (keyStroke != null) {
-                return keyStroke.equals(((HotKey)other).keyStroke);
+                return keyStroke.equals(other.keyStroke);
             }
-            return mediaKey == ((HotKey)other).mediaKey;
+            return mediaKey == other.mediaKey;
         }
         return false;
     }

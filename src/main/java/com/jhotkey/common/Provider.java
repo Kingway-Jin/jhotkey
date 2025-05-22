@@ -40,6 +40,11 @@ public abstract class Provider {
         }
     }
 
+    public void close() {
+        reset();
+        stop();
+    }
+
     protected abstract void init();
     public abstract void reset();
     public abstract boolean isRunning();
